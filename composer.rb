@@ -2108,6 +2108,8 @@ end
 
 # >-----------------------------[ Run 'Bundle Install' ]-------------------------------<
 
+say_wizard "Fixing PostgreSQL gem on OS X."
+run 'bundle config build.pg --with-pg-include="/Applications/Postgres.app/Contents/Versions/9.4/include/"'
 say_wizard "Installing gems. This will take a while."
 run 'bundle install --without production'
 say_wizard "Updating gem paths."
